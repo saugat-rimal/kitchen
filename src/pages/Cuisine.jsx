@@ -4,17 +4,7 @@ import Masonry from "react-masonry-css";
 
 const Cuisine = () => {
   const [cuisine, setCuisine] = useState([]);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const param = useParams();
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const getCuisine = async (name) => {
     const checkCuisine = localStorage.getItem(name);
@@ -48,43 +38,37 @@ const Cuisine = () => {
   };
 
   return (
-    <div className="flex justify-center items-center sm:mx-10 mx-5 ">
+    <div className="flex justify-center items-center  mx-5 ">
       <Masonry
         breakpointCols={breakpointObj}
-        className="flex gap-5 relative items-center "
+        className="flex gap-5 relative items-center max-w-7xl"
       >
-        {cuisine.map((recipe) => {
+        {cuisine.map((item) => {
           return (
-            <div
-              key={recipe.id}
-              className="relative my-8 w-auto hover:shadow-lg rounded  overflow-hidden border-4 group border-[#edf2f7] flex flex-1 "
-            >
+            <div key={item.id}>
               <Link
-              // to={`/recipe/${recipe.id}`}
+              // to={`/recipe/${item.id}`}
               >
-                <img
-                  src={recipe.image}
-                  alt={recipe.title}
-                  className="w-full h-auto object-cover bg-center bg-no-repeat "
-                />
+                <figure className=" flex flex-col gap-4 my-8 border-2 border-[#494949] drop-shadow-md rounded shadow-xl">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className=" border-b-2 border-[#494949] object-cover object-center h-auto w-full"
+                  />
+                  <figcaption className="flex gap-7 items-start px-4 pb-4">
+                    {item.title.length > 40 ? (
+                      <h3 className="flex flex-1 text-[#494949]">
+                        {item.title.slice(0, 40)}...
+                      </h3>
+                    ) : (
+                      <h3 className="flex flex-1 text-[#494949]">
+                        {item.title}
+                      </h3>
+                    )}
 
-                {windowWidth > 640 ? (
-                  <h2
-                    className="absolute bottom-0 left-0 w-full p-2 text-[#494949] text-lg font-normal bg-gradient-to-t from-[#cbd5e0]  to-[#edf2f7]
-                  opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out 
-                   "
-                  >
-                    {recipe.title}
-                  </h2>
-                ) : (
-                  <h2
-                    className="absolute bottom-0 left-0 w-full p-2 text-[#494949] text-lg font-normal bg-gradient-to-t from-[#cbd5e0]  to-[#edf2f7]
-                  opacity-100 
-                   "
-                  >
-                    {recipe.title}
-                  </h2>
-                )}
+                    <button className="flex flex-shrink-0">More Info</button>
+                  </figcaption>
+                </figure>
               </Link>
             </div>
           );

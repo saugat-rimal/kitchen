@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 const Recipe = () => {
   const params = useParams();
   const [recipe, setRecipe] = useState([]);
-  const [activeTab, setActiveTab] = useState("instructions");
+  const [activeTab, setActiveTab] = useState("ingredients");
 
   const getRecipe = async (id) => {
     const checkRecipe = localStorage.getItem(id);

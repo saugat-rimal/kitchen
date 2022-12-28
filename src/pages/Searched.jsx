@@ -44,9 +44,7 @@ const Searched = () => {
         {search.map((item) => {
           return (
             <div key={item.id}>
-              <Link
-              // to={`/recipe/${item.id}`}
-              >
+              <Link to={`/recipe/${item.id}`}>
                 <figure className=" flex flex-col gap-4 my-8 border-2 border-[#494949] drop-shadow-md rounded shadow-xl ">
                   <img
                     src={item.image}

@@ -44,6 +44,10 @@ body {
   min-height: 100vh;
 }
 
+li{
+  list-style: decimal;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -125,7 +129,7 @@ button:focus-visible {
 
   .active{
     background: linear-gradient(90deg, #61dafb 0%, #646cff 100%);
-    
+    color: white;  
   }
 
 

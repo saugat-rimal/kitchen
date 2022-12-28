@@ -2,9 +2,9 @@ import { Popular, Veggie } from "../container";
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="container mx-auto bg-red-300 mt-20 px-4 sm:px-8 max-w-screen-xl">
       <Popular />
-      {/* <Veggie /> */}
+      <Veggie />
     </div>
   );
 };

@@ -84,6 +84,12 @@ const Popular = () => {
                       <h3 className="flex flex-1 text-[#494949]">
                         {item.title}
                       </h3>
+                    ) : windowWidth > 1111 ? (
+                      <h3 className="flex flex-1 text-[#494949]">
+                        {item.title.length > 40
+                          ? item.title.slice(0, 37) + "..."
+                          : item.title}
+                      </h3>
                     ) : item.title.length > 27 ? (
                       <h3 className="flex flex-1 text-[#494949]">
                         {item.title.slice(0, 24)}...

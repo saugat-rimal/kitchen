@@ -39,7 +39,7 @@ const Veggie = () => {
 
   return (
     <section>
-      <h2 className=" drop-shadow mt-4 text-3xl font-bold  text-[#494949]">
+      <h2 className=" drop-shadow mt-4 text-3xl font-bold  text-[#494949] dark:text-white">
         Veggie
       </h2>
 
@@ -81,15 +81,15 @@ const Veggie = () => {
                   />
                   <figcaption className="flex gap-7 items-start px-4 pb-4">
                     {windowWidth < 640 ? (
-                      <h3 className="flex flex-1 text-[#494949]">
+                      <h3 className="flex flex-1 text-[#494949] dark:text-white">
                         {item.title}
                       </h3>
                     ) : item.title.length > 27 ? (
-                      <h3 className="flex flex-1 text-[#494949]">
+                      <h3 className="flex flex-1 text-[#494949] dark:text-white">
                         {item.title.slice(0, 24)}...
                       </h3>
                     ) : (
-                      <h3 className="flex flex-1 text-[#494949]">
+                      <h3 className="flex flex-1 text-[#494949] dark:text-white">
                         {item.title}
                       </h3>
                     )}

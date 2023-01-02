@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
-    <div className="error__card">
+    <div className="error__card mb-16">
       <img className="logo" src={logo} alt="Vite Logo" />
       <h1>404 ERROR !!</h1>
       <p className="read-the-docs">Page Not Found</p>

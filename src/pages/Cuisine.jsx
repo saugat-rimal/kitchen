@@ -55,16 +55,18 @@ const Cuisine = () => {
                   />
                   <figcaption className="flex gap-7 items-start px-4 pb-4">
                     {item.title.length > 40 ? (
-                      <h3 className="flex flex-1 text-[#494949]">
+                      <h3 className="flex flex-1 text-[#494949] dark:text-white">
                         {item.title.slice(0, 40)}...
                       </h3>
                     ) : (
-                      <h3 className="flex flex-1 text-[#494949]">
+                      <h3 className="flex flex-1 dark:text-white text-[#494949]">
                         {item.title}
                       </h3>
                     )}
 
-                    <button className="flex flex-shrink-0">More Info</button>
+                    <button className="flex flex-shrink-0 dark:text-white">
+                      More Info
+                    </button>
                   </figcaption>
                 </figure>
               </Link>

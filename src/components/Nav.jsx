@@ -13,7 +13,11 @@ const Nav = () => {
       >
         {/* <GiKnifeFork className="text-[#494949]  " />
         <h2 className="flex font-Lobster ">Kitchen</h2> */}
-        <img src="/kitchenbook.svg" alt="" className=" w-4/12 lg:-mb-20 " />
+        <img
+          src="/kitchenbook.svg"
+          alt="site logo"
+          className=" w-4/12 lg:-mb-20 dark:fill-white"
+        />
       </Link>
     </nav>
   );
